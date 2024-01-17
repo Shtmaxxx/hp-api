@@ -23,6 +23,11 @@ app.get("/api/character/:id", function (req, res) {
   );
 });
 
+app.get("/api/character", function (req, res) {
+  var id = Math.floor(Math.random() * characters.length);
+  res.json([characters[id]]);
+});
+
 app.get("/api/characters/students", function (req, res) {
   res.json(characters.filter((character) => character.hogwartsStudent));
 });
